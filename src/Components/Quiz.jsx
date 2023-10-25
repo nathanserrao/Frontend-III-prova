@@ -27,7 +27,7 @@ function Quiz() {
   const [respostas, setRespostas] = useState(Array(perguntas.length).fill(''));
   const [exibirResultado, setExibirResultado] = useState(false);
 
-  const handleSelecionar = (opcaoSelecionada, indicePergunta) => {
+  const Selecionar = (opcaoSelecionada, indicePergunta) => {
     const novasRespostas = [...respostas];
     novasRespostas[indicePergunta] = opcaoSelecionada;
     setRespostas(novasRespostas);
@@ -55,7 +55,7 @@ function Quiz() {
                     name={`pergunta${indice}`}
                     value={opcao}
                     checked={respostas[indice] === opcao}
-                    onChange={() => handleSelecionar(opcao, indice)}
+                    onChange={() => Selecionar(opcao, indice)}
                     disabled={exibirResultado}
                   />
                   {opcao}
